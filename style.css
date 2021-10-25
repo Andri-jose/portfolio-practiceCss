@@ -1,0 +1,419 @@
+:root {
+  /*Primary colors*/
+  --clr-primary-blue: rgba(12, 155, 184, 0.856);
+  --clr-primary-black: rgba(0, 0, 0, 0.733);
+  /*Neutral colors*/
+  --clr-secondary-lightblue: rgb(139, 201, 209);
+  --clr-secondary-white: #e7e7e7d3;
+  --clr-third-hover-black: rgba(0, 0, 0, 0.438);
+  --clr-third-hover-button: rgba(57, 178, 202, 0.274);
+  --ff-primary: 'Bai Jamjuree', sans-serif;
+ 
+}
+
+
+/*reset the page*/
+body{
+    font-size: 1.125rem;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    text-align: center;
+    font-family: var(--ff-primary);
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5rem;
+    
+}
+
+a:link, a:visited, a:active {
+  text-decoration:none;
+}
+
+li,
+ul,
+ol {
+  list-style: none;
+  
+}
+
+img {
+    max-width: 100%;
+    
+  }
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+  }
+
+  
+/*top nav bar*/
+
+/*container of top nav bar*/
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--clr-third-hover-black);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;    
+  top: 0;
+
+}
+
+/*Andri Salazar*/
+/*name container*/
+.name{
+  text-align: left;
+  padding-left: 2rem;
+  
+}
+
+.name__link{
+  color: var(--clr-secondary-white);
+}
+
+.navbar__link{
+  color: var(--clr-secondary-white);
+  
+}
+
+/*dropdown menu*/
+
+.navbar-dropdown{
+  width: 50%;
+  text-align: right;
+ 
+}
+
+/*dropdown*/
+.navbar-link{
+  position: absolute;
+  display: none;
+  background-color: var(--clr-primary-black);
+  height: 30vh;
+  width: 50%;
+  padding-top: .2rem;
+  text-align: center;
+}
+
+.navbar-link a{
+  color: #fff;
+  padding: .7rem 0;
+}
+
+.navbar-link a:hover{
+  background-color: var(--clr-secondary-lightblue);
+ 
+}
+
+/*hover to see the content inside dropdown*/
+.navbar-dropdown:hover .navbar-link{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/*button dropdown*/
+.navbar-btn{
+  padding: .1rem .8rem;
+  background-color: rgba(57, 178, 202, 0.274);
+  font-size: 1.3rem;
+  border-width: .1.5rem .1.5rem;
+  border-color: rgba(0, 0, 0, 0.562);
+  cursor: pointer;
+  
+  
+}
+
+.navbar-btn:hover {
+  background-color: var(--clr-third-hover-black);
+}
+
+.fas{
+  color: rgba(0, 0, 0, 0.603);
+}
+
+
+
+/*projects*/
+
+#projects{
+  background-color: var(--clr-primary-black);
+  padding: 3.5rem .7rem;
+  
+}
+
+.project-intro{
+  color: var(--clr-secondary-lightblue);
+  padding: 1.2rem 0;
+  
+}
+
+/*links in the projects*/
+.project__link{
+  color: #fff;
+  
+}
+
+.project__link:hover{
+  color: var(--clr-secondary-lightblue);
+}
+
+.btn-pro{
+  background-color:rgba(0, 0, 0, 0.048);
+  padding: .2rem .4rem;
+  margin: 0 .5rem;
+  border: .15rem solid black;
+  
+}
+
+.btn-pro:hover{
+  background-color: black;
+  transition: .5s;
+  
+}
+/*container of link projects*/
+.project_container{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  
+}
+/*popup below projects*/
+/*popup container*/
+.popup_container{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.popup{
+  max-width: 40rem;
+  background-color: var(--clr-primary-blue);
+  color:rgba(255, 255, 255, 0.87);
+  line-height: 4rem;
+  padding: 1.5rem .1rem;
+  position: relative;
+  margin-top: 10rem;
+  
+}
+
+.popup_container:target{
+  display: block;
+}
+
+.popup__link{
+  font-weight: 500;
+  border-radius: 2px;
+  color: #fff;
+  border: .15rem solid black;
+  padding: .2rem .4rem;
+  
+}
+
+.popup__link:hover{
+  background-color: black;
+  transition: .5s;
+  color: var(--clr-secondary-lightblue);
+}
+
+.popup_close{
+  text-transform: uppercase;
+  color: #000;
+  position: absolute;
+  top:0;
+  right: 0;
+  border: .12rem solid black;
+  line-height: 0;
+  padding: .5rem .2rem;
+}
+
+.popup_close:hover{
+  background-color: black;
+  transition: .5s;
+  color: var(--clr-secondary-lightblue);
+}
+
+
+
+/*about me*/
+
+#about_container{
+  padding: 3.5rem .7rem;
+  background-color: rgba(0, 0, 0, 0.877);
+}
+
+.img{
+  border: 4px solid black;
+  width: 30rem;
+}
+
+#welcome-section{
+  color:var(--clr-secondary-white);
+  padding: 3.5rem 0;
+}
+
+
+
+/*contact*/
+
+.contact_container{
+  background-color: var(--clr-primary-black);
+  padding: 1.9rem 0;
+  
+}
+
+.contact_title{
+  color: var(--clr-secondary-lightblue);
+  margin-bottom: 2.2rem;
+}
+
+.contact_info{
+  color: var(--clr-secondary-white);
+  
+}
+
+#contact_links{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  
+}
+
+
+.far,
+.fab,
+.fas{
+  color:var(--clr-secondary-lightblue);
+  padding-right: .2rem;
+  cursor: pointer;
+}
+
+/*media query*/
+
+@media(min-width: 42.66rem){
+  /*nav bar*/
+  #navbar{
+    height: 2.5rem;
+    align-self: center;
+  }
+
+  .navbar-btn{
+    display: none;
+  }
+
+  .name{
+    margin-top: .5rem;
+  }
+
+  .navbar-link{
+    position: static;
+    display: block;
+    height: 0;
+    top: 0;
+    width: 17rem;
+    padding-top: 0;
+    display: flex;
+    text-align: right;
+    float: right;
+  }
+  
+  .navbar-link a{
+    padding: 0 1rem;
+    margin-top: .5rem;
+  }
+  
+  .navbar-link a:hover{
+   color: var(--clr-secondary-lightblue);
+   
+  }
+  
+  .navbar-dropdown:hover .navbar-link{
+    flex-direction: row;
+    
+  }
+  /*projects*/
+  .project-intro{
+    font-size: 3rem;
+    line-height: 2rem;
+  }
+
+  .project-tile{
+    max-width: 21rem;
+    margin-top: 3rem;
+  }
+  
+  .popup{
+    margin-left: 25%;
+    margin-right: 25%;
+    
+  }
+
+  /*about me*/
+
+  #about_container{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #welcome-section{
+    height: 100vh;
+    width: 40rem;
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    
+  }
+
+  /*footer*/
+  .contact_container{
+    height: 60vh;
+  }
+
+  .contact_title{
+    text-align: left;
+    margin: 2rem 0 0 5rem;
+    text-transform: uppercase;
+  }
+
+  #contact_links{
+   flex-direction: row;
+   justify-content: center;
+   margin-top: 6rem;
+   gap: 5rem;
+  }
+
+  
+
+}
